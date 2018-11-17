@@ -10,26 +10,12 @@ namespace GameOfLife.Test
     [TestFixture]
     public class Test
     {
-        [Test]
-        public void DeadCellStaysDeadWithNoNeighbors()
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(2)]
+        public void DeadCellStaysDeadWithNoNeighbors(int numNeighbours)
         {
-            int numNeighbours = 0;
             Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
         }
-
-        [Test]
-        public void DeadCellStaysDeadWith2Neighbors()
-        {
-            int numNeighbours = 2;
-            Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
-        }
-
-        [Test]
-        public void DeadCellStaysDeadWith1Neighbors()
-        {
-            int numNeighbours = 1;
-            Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
-        }
-
     }
 }
