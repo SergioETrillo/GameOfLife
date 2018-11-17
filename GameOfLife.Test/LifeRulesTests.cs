@@ -7,5 +7,12 @@ using NUnit.Framework;
 
 namespace GameOfLife.Test
 {
-
+    public class Test
+    {
+        [Test]
+        public void X()
+        {
+            Assert.IsFalse(false);
+        }
+    }
 }
