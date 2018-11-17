@@ -17,5 +17,12 @@ namespace GameOfLife.Test
         {
             Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
         }
+
+        [Test]
+        public void voidLiveCellDiesMoreThan3Neighbors()
+        {
+            int neighbours = 4;
+            Assert.IsFalse(LifeRules.CellSurvives(neighbours));
+        }
     }
 }
