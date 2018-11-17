@@ -13,15 +13,14 @@ namespace GameOfLife.Test
         [TestCase(0)]
         [TestCase(1)]
         [TestCase(2)]
-        public void DeadCellStaysDeadWithNoNeighbors(int numNeighbours)
+        public void DeadCellStaysDeadWithLessThan3Neighbors(int numNeighbours)
         {
             Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
         }
 
-        [Test]
-        public void voidLiveCellDiesMoreThan3Neighbors()
+        [TestCase(4)]
+        public void LiveCellDiesMoreThan3Neighbors(int neighbours)
         {
-            int neighbours = 4;
             Assert.IsFalse(LifeRules.CellSurvives(neighbours));
         }
 
