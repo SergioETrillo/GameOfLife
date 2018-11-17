@@ -8,7 +8,7 @@ namespace GameOfLife
 {
     public class LifeRules
     {
-        public static bool CellSurvives(int num)
+        public static bool CellSurvives(int num, bool state = false)
         {
             return num == 3;
         }
