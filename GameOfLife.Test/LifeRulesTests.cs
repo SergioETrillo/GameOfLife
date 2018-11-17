@@ -10,12 +10,15 @@ namespace GameOfLife.Test
     [TestFixture]
     public class Test
     {
-        [TestCase(0)]
-        [TestCase(1)]
-        [TestCase(2)]
-        public void DeadCellStaysDeadWithLessThan3Neighbors(int numNeighbours)
+        public class DeadStateTests
         {
-            Assert.IsFalse(LifeRules.CellSurvives(numNeighbours, false));
+            [TestCase(0)]
+            [TestCase(1)]
+            [TestCase(2)]
+            public void StaysDeadWithLessThan3Neighbors(int numNeighbours)
+            {
+                Assert.IsFalse(LifeRules.CellSurvives(numNeighbours, false));
+            }
         }
 
         [TestCase(4)]
@@ -38,5 +41,6 @@ namespace GameOfLife.Test
             int neighbours = 2;
             Assert.IsTrue(LifeRules.CellSurvives(neighbours, true));
         }
+    
     }
 }
