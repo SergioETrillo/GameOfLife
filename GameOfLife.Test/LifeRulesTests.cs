@@ -7,13 +7,29 @@ using NUnit.Framework;
 
 namespace GameOfLife.Test
 {
+    [TestFixture]
     public class Test
     {
         [Test]
-        public void DeadCellStaysDealWithNoNeighbors()
+        public void DeadCellStaysDeadWithNoNeighbors()
         {
             int numNeighbours = 0;
             Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
         }
+
+        [Test]
+        public void DeadCellStaysDeadWith2Neighbors()
+        {
+            int numNeighbours = 2;
+            Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
+        }
+
+        [Test]
+        public void DeadCellStaysDeadWith1Neighbors()
+        {
+            int numNeighbours = 1;
+            Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
+        }
+
     }
 }
