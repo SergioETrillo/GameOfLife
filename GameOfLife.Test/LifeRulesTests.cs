@@ -24,5 +24,12 @@ namespace GameOfLife.Test
             int neighbours = 4;
             Assert.IsFalse(LifeRules.CellSurvives(neighbours));
         }
+
+        [Test]
+        public void CellAlwaysAliveWith3Neighbours()
+        {
+            int neighbours = 3;
+            Assert.IsTrue(LifeRules.CellSurvives(neighbours));
+        }
     }
 }

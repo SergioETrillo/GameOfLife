@@ -10,7 +10,7 @@ namespace GameOfLife
     {
         public static bool CellSurvives(int num)
         {
-            return false;
+            return num == 3;
         }
     }
 }
