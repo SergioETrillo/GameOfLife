@@ -10,9 +10,10 @@ namespace GameOfLife.Test
     public class Test
     {
         [Test]
-        public void X()
+        public void DeadCellStaysDealWithNoNeighbors()
         {
-            Assert.IsFalse(false);
+            int numNeighbours = 0;
+            Assert.IsFalse(LifeRules.CellSurvives(numNeighbours));
         }
     }
 }

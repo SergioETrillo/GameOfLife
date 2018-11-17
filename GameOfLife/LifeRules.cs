@@ -8,6 +8,9 @@ namespace GameOfLife
 {
     public class LifeRules
     {
-
+        public static bool CellSurvives(int num)
+        {
+            return false;
+        }
     }
 }
